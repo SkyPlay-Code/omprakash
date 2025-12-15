@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO METADATA -->
+    <title>Om Prakash Bisoi | CS Student @ PM SHRI KV No.1 Bhubaneswar</title>
+    <meta name="description" content="Meet Om Prakash Bisoi, an 11th Grade Computer Science student at PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar. A friendly learner and tech enthusiast.">
+    <meta name="keywords" content="Om Prakash Bisoi, PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar, KV No.1 BBSR, 11th Grade Student, Computer Science Student, Student Portfolio">
+    <meta name="author" content="Om Prakash Bisoi">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skyplay-code.github.io/omprakash.com/">
+    <meta property="og:url" content="https://omprakashbisoi.vercel.app/">
+    <meta property="og:title" content="Om Prakash Bisoi | Student Portfolio">
+    <meta property="og:description" content="Student at PM SHRI KV No.1 Bhubaneswar. Friendly, curious, and exploring the world of Computer Science.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Om+Prakash+Bisoi">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Om Prakash Bisoi | Student Portfolio">
+    <meta property="twitter:description" content="Student at PM SHRI KV No.1 Bhubaneswar. Friendly, curious, and exploring the world of Computer Science.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS STYLES -->
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Animated Background --- */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f172a, #1e1b4b);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .blob-1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .blob-2 {
+            bottom: 20%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* --- Hero Section --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #cbd5e1;
+        }
+
+        .tagline {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        /* --- About Section --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .school-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .school-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* --- Traits/Skills --- */
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .trait-item {
+            text-align: center;
+            background: rgba(255,255,255,0.03);
+            padding: 40px 20px;
+            border-radius: 15px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .trait-item:hover {
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .trait-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: -webkit-linear-gradient(var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Contact --- */
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.3);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
+    
+    <!-- STRUCTURED DATA (JSON-LD) for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Om Prakash Bisoi",
+      "url": "https://omprakashbisoi.com",
+      "jobTitle": "Student",
+      "affiliation": {
+        "@type": "School",
+        "name": "PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "addressCountry": "India"
+      },
+      "description": "11th Grade Computer Science student at PM SHRI KV No.1 Bhubaneswar. Known for being friendly, collaborative, and interested in technology."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Om Prakash.</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#qualities">Qualities</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+        <div class="hero-content">
+            <span class="tagline">Student & Tech Enthusiast</span>
+            <h1>Hi, I'm <br> Om Prakash Bisoi</h1>
+            <p>A dedicated Class 11 Student (CS Stream) at <br> PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar.</p>
+            <a href="#contact" class="cta-btn">Say Hello <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Who Am I?</h2>
+        <div class="about-grid">
+            <div class="card">
+                <h3>My Journey</h3>
+                <p style="margin-top: 15px; color: #cbd5e1;">
+                    I am currently navigating the exciting world of Computer Science in the 11th grade. I believe that consistency beats intensity. While I don't claim to know everything, I possess a deep curiosity to learn how things work, from simple code to complex systems.
+                </p>
+                <br>
+                <p style="color: #cbd5e1;">
+                    My friends describe me as <span class="highlight">approachable</span> and <span class="highlight">down-to-earth</span>. I love connecting with people and helping out wherever I can.
+                </p>
+            </div>
+            
+            <div class="card" style="border-left: 4px solid var(--secondary);">
+                <h3>Education</h3>
+                <div class="school-badge">
+                    <i class="fas fa-school school-icon"></i>
+                    <div>
+                        <h4 style="font-size: 1.1rem;">PM SHRI Kendriya Vidyalaya No.1</h4>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">Bhubaneswar, Odisha</p>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Class XI • Computer Science Stream</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualities / Skills Section -->
+    <section id="qualities">
+        <h2 class="section-title">Why Connect With Me?</h2>
+        <div class="traits-grid">
+            <div class="trait-item">
+                <i class="fas fa-users trait-icon"></i>
+                <h3>Friendly Nature</h3>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
+                    I value relationships and believe in a collaborative environment. Always up for a chat or a group project.
+                </p>
+            </div>
+            <div class="trait-item">
+                <i class="fas fa-laptop-code trait-icon"></i>
+                <h3>CS Enthusiast</h3>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
+                    Learning Python, SQL, and Web basics. Dedicated to understanding the logic behind the screen.
+                </p>
+            </div>
+            <div class="trait-item">
+                <i class="fas fa-book-open trait-icon"></i>
+                <h3>Consistent Learner</h3>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
+                    I focus on daily progress. I might be an "average" student on paper, but my effort is above average.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container card">
+            <h2>Let's Get in Touch</h2>
+            <p style="margin-top: 15px; color: #cbd5e1;">
+                Whether you go to PM SHRI KV No.1, or just want to discuss tech, I'd love to hear from you.
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Om Prakash Bisoi. Made with <i class="fas fa-heart" style="color: var(--primary);"></i> in Bhubaneswar.</p>
+    </footer>
+
+</body>
+</html>
