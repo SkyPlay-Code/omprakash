@@ -4,28 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="2-JaK3v1jKw8ywnEQjCq7e49pdVI3Mpk6-6YmDLvzJ8" />
     
     <!-- SEO METADATA -->
-    <title>Om Prakash Bisoi | CS Student @ PM SHRI KV No.1 Bhubaneswar</title>
-    <meta name="description" content="Meet Om Prakash Bisoi, an 11th Grade Computer Science student at PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar. A friendly learner and tech enthusiast.">
-    <meta name="keywords" content="Om Prakash Bisoi, PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar, KV No.1 BBSR, 11th Grade Student, Computer Science Student, Student Portfolio">
-    <meta name="author" content="Om Prakash Bisoi">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://omprakashbisoi.vercel.app/" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://omprakashbisoi.vercel.app/">
-    <meta property="og:title" content="Om Prakash Bisoi | Student Portfolio">
-    <meta property="og:description" content="Student at PM SHRI KV No.1 Bhubaneswar. Friendly, curious, and exploring the world of Computer Science.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Om+Prakash+Bisoi">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Om Prakash Bisoi | Student Portfolio">
-    <meta property="twitter:description" content="Student at PM SHRI KV No.1 Bhubaneswar. Friendly, curious, and exploring the world of Computer Science.">
-
+    <title>Om Prakash Bisoi | CS Student Portfolio</title>
+    <meta name="description" content="Portfolio of Om Prakash Bisoi, an aspiring Computer Science Engineer and student at PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar.">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +20,13 @@
     <!-- CSS STYLES -->
     <style>
         :root {
-            --primary: #4f46e5;
-            --secondary: #06b6d4;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            /* MONOCHROME PALETTE */
+            --primary: #f8fafc;       /* Almost White */
+            --secondary: #94a3b8;     /* Silver/Slate */
+            --dark: #0a0a0a;          /* Deep Black */
+            --darker: #000000;        /* Pure Black */
+            --glass: rgba(20, 20, 20, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -55,13 +39,14 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark);
-            color: var(--light);
+            color: var(--primary);
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.5px;
         }
 
         a {
@@ -69,7 +54,7 @@
             color: inherit;
         }
 
-        /* --- Animated Background --- */
+        /* --- Geometric Background Animation --- */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -77,39 +62,60 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(45deg, #0f172a, #1e1b4b);
+            background-color: var(--dark);
+            /* Optional Grid Pattern for that "Engineering/Graph" look */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
 
-        .blob {
+        .geo-shape {
             position: absolute;
-            filter: blur(80px);
-            opacity: 0.6;
-            animation: float 10s infinite ease-in-out;
+            opacity: 0.15;
+            animation: float 15s infinite linear;
+            border: 2px solid var(--secondary);
+            background: rgba(255,255,255,0.02);
         }
 
-        .blob-1 {
-            top: 10%;
+        /* Triangle */
+        .shape-1 {
+            top: 15%;
             left: 10%;
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: var(--secondary);
+            animation-duration: 20s;
         }
 
-        .blob-2 {
+        /* Square / Diamond */
+        .shape-2 {
             bottom: 20%;
             right: 10%;
-            width: 400px;
-            height: 400px;
-            background: var(--secondary);
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+            border-radius: 20px; /* Soft edges */
+            animation-duration: 25s;
+            animation-delay: -5s;
+        }
+
+        /* Circle */
+        .shape-3 {
+            top: 40%;
+            right: 30%;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            animation-delay: 2s;
+            border: 1px dashed var(--secondary);
+            background: transparent;
         }
 
         @keyframes float {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 50px); }
-            100% { transform: translate(0, 0); }
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-40px) rotate(20deg); }
+            100% { transform: translateY(0) rotate(0deg); }
         }
 
         /* --- Navigation --- */
@@ -119,7 +125,7 @@
             align-items: center;
             padding: 20px 5%;
             backdrop-filter: blur(10px);
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             position: fixed;
             width: 100%;
             z-index: 1000;
@@ -129,19 +135,22 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
+            letter-spacing: 1px;
         }
 
         .nav-links a {
             margin-left: 30px;
             font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--secondary);
             transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         /* --- Hero Section --- */
@@ -155,129 +164,205 @@
             padding-top: 80px;
         }
 
+        .hero-img-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px auto;
+            border-radius: 50%; /* Kept round */
+            padding: 8px;
+            /* Monochrome Gradient Border */
+            background: linear-gradient(135deg, #ffffff, #333333);
+            box-shadow: 0 0 30px rgba(255,255,255,0.1);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--dark);
+            background-color: #333;
+        }
+
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.1;
+            background: linear-gradient(to bottom, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto 30px auto;
-            color: #cbd5e1;
+            color: var(--secondary);
         }
 
         .tagline {
             display: inline-block;
-            padding: 8px 16px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            padding: 6px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--secondary);
             border-radius: 50px;
             font-size: 0.9rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
         }
 
         .cta-btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: white;
+            padding: 14px 35px;
+            background: var(--primary);
+            color: var(--dark);
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        /* --- About Section --- */
+        /* --- Sections Common --- */
         section {
-            padding: 100px 10%;
+            padding: 100px 8%;
         }
 
         .section-title {
             font-size: 2.5rem;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             text-align: center;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            color: var(--primary);
         }
 
         .card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            padding: 30px;
+            padding: 35px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--secondary);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
         }
 
         .highlight {
-            color: var(--secondary);
+            color: #ffffff;
             font-weight: 600;
+            border-bottom: 2px solid var(--secondary);
         }
 
         .school-badge {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .school-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--primary);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
         }
 
-        /* --- Traits/Skills --- */
-        .traits-grid {
+        /* --- Portfolio & Trivia Grid --- */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
 
-        .trait-item {
-            text-align: center;
-            background: rgba(255,255,255,0.03);
-            padding: 40px 20px;
-            border-radius: 15px;
-            border: 1px solid transparent;
-            transition: 0.3s;
+        .skill-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 5px; /* More squared for geo look */
+            font-size: 0.8rem;
+            margin: 4px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .trait-item:hover {
-            border-color: var(--primary);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .trait-icon {
+        .project-placeholder {
+            height: 150px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2.5rem;
+            color: #333;
+            border: 1px dashed #555;
             margin-bottom: 20px;
-            background: -webkit-linear-gradient(var(--secondary), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Quote Styling --- */
+        .quote-container {
+            text-align: center;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        
+        .quote-text {
+            font-size: 1.1rem;
+            color: #d4d4d8;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-style: normal;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* --- Obsessions / List --- */
+        .obsession-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .obsession-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: var(--secondary);
+        }
+        .obsession-list li i {
+            margin-right: 15px;
+            color: var(--primary);
         }
 
         /* --- Contact --- */
         .contact-container {
-            text-align: center;
             max-width: 600px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .social-links {
@@ -290,171 +375,215 @@
         .social-btn {
             width: 50px;
             height: 50px;
-            border-radius: 50%;
-            background: var(--glass);
+            border-radius: 12px; /* Slight square */
+            background: rgba(255,255,255,0.05);
+            color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--glass-border);
             transition: 0.3s;
+            font-size: 1.2rem;
         }
 
         .social-btn:hover {
             background: var(--primary);
-            color: white;
+            color: var(--dark);
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            background: rgba(0,0,0,0.3);
+            padding: 50px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--secondary);
             font-size: 0.9rem;
-            color: #94a3b8;
         }
 
-        /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
-            nav {
-                justify-content: center;
-            }
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            nav { justify-content: center; }
         }
     </style>
-    
-    <!-- STRUCTURED DATA (JSON-LD) for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Om Prakash Bisoi",
-      "url": "https://omprakashbisoi.vercel.app/",
-      "jobTitle": "Student",
-      "affiliation": {
-        "@type": "School",
-        "name": "PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bhubaneswar",
-        "addressRegion": "Odisha",
-        "addressCountry": "India"
-      },
-      "description": "11th Grade Computer Science student at PM SHRI KV No.1 Bhubaneswar. Known for being friendly, collaborative, and interested in technology."
-    }
-    </script>
 </head>
 <body>
 
-    <!-- Background Elements -->
+    <!-- Geometric Background -->
     <div class="bg-animation">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+        <div class="geo-shape shape-1"></div>
+        <div class="geo-shape shape-2"></div>
+        <div class="geo-shape shape-3"></div>
     </div>
 
     <!-- Navbar -->
     <nav>
-        <div class="logo">Om Prakash.</div>
+        <div class="logo">OM.</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#qualities">Qualities</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#vibes">My Vibe</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header id="home">
         <div class="hero-content">
-            <span class="tagline">Student & Tech Enthusiast</span>
-            <h1>Hi, I'm <br> Om Prakash Bisoi</h1>
-            <p>A dedicated Class 11 Student (CS Stream) at <br> PM SHRI Kendriya Vidyalaya No.1 Bhubaneswar.</p>
-            <a href="#contact" class="cta-btn">Say Hello <i class="fas fa-arrow-right"></i></a>
+            <!-- REPLACE WITH YOUR IMAGE FILE -->
+            <div class="hero-img-container">
+                <img src="omprakashbisoi.png" alt="Om Prakash Bisoi" class="hero-img">
+            </div>
+            
+            <span class="tagline">Learning Today, Leading Tomorrow</span>
+            <h1>I'm Om Prakash Bisoi</h1>
+            <p>Future Computer Science Engineer <br> Student @ PM SHRI Kendriya Vidyalaya No.1</p>
+            <a href="#contact" class="cta-btn">Connect With Me</a>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
-        <h2 class="section-title">Who Am I?</h2>
+        <h2 class="section-title">The Story So Far</h2>
         <div class="about-grid">
             <div class="card">
-                <h3>My Journey</h3>
-                <p style="margin-top: 15px; color: #cbd5e1;">
-                    I am currently navigating the exciting world of Computer Science in the 11th grade. I believe that consistency beats intensity. While I don't claim to know everything, I possess a deep curiosity to learn how things work, from simple code to complex systems.
+                <h3>Who Am I?</h3>
+                <p style="margin-top: 15px; color: var(--secondary);">
+                    I am Om Prakash Bisoi, a determined 11th-grade student with a clear vision. While many are still figuring it out, my dream has been constant since childhood: <strong>to become a Computer Science Engineer</strong>.
                 </p>
                 <br>
-                <p style="color: #cbd5e1;">
-                    My friends describe me as <span class="highlight">approachable</span> and <span class="highlight">down-to-earth</span>. I love connecting with people and helping out wherever I can.
+                <p style="color: var(--secondary);">
+                    Beyond the screen, I am a leader and a participant. I have proudly secured a <strong>State-Level selection in Scouts & Guides</strong> and represented my school at the <strong>National Youth Parliament</strong> in Guwahati, Assam. I believe that being "curious" and "creative" are not just words, but a way of life.
                 </p>
             </div>
-            
-            <div class="card" style="border-left: 4px solid var(--secondary);">
-                <h3>Education</h3>
+            <div class="card">
+                <h3>Details</h3>
                 <div class="school-badge">
-                    <i class="fas fa-school school-icon"></i>
+                    <div class="school-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div>
-                        <h4 style="font-size: 1.1rem;">PM SHRI Kendriya Vidyalaya No.1</h4>
-                        <p style="font-size: 0.9rem; color: #94a3b8;">Bhubaneswar, Odisha</p>
-                        <p style="font-size: 0.9rem; margin-top: 5px;">Class XI • Computer Science Stream</p>
+                        <h4>KV No.1 Bhubaneswar</h4>
+                        <span style="font-size: 0.85rem; color: #666;">Class XI • CS Stream</span>
+                    </div>
+                </div>
+                <div class="school-badge">
+                    <div class="school-icon"><i class="fas fa-trophy"></i></div>
+                    <div>
+                        <h4>Achievements</h4>
+                        <span style="font-size: 0.85rem; color: #666;">Scout & Guide State • Youth Parliament National</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Qualities / Skills Section -->
-    <section id="qualities">
-        <h2 class="section-title">Why Connect With Me?</h2>
-        <div class="traits-grid">
-            <div class="trait-item">
-                <i class="fas fa-users trait-icon"></i>
-                <h3>Friendly Nature</h3>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
-                    I value relationships and believe in a collaborative environment. Always up for a chat or a group project.
+    <!-- Portfolio & Skills -->
+    <section id="portfolio">
+        <h2 class="section-title">Work & Growth</h2>
+        <div class="grid-3">
+            <!-- Skills -->
+            <div class="card">
+                <h4><i class="fas fa-code"></i> Tech & Skills</h4>
+                <div style="margin-top: 15px;">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--secondary);">Exploring:</p>
+                    <span class="skill-tag">Python (Basics)</span>
+                    <span class="skill-tag">Java (Learning)</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                </div>
+                <div style="margin-top: 15px;">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--secondary);">Strengths:</p>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Teamwork</span>
+                </div>
+            </div>
+
+            <!-- Project -->
+            <div class="card">
+                <h4><i class="fas fa-bolt"></i> ATL Project</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 15px; color: var(--secondary);">Smart Waste Management System</p>
+                <div class="project-placeholder">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--secondary);">
+                    Designed a prototype for an automatic waste detection system using sensors to help keep cities cleaner.
                 </p>
             </div>
-            <div class="trait-item">
-                <i class="fas fa-laptop-code trait-icon"></i>
-                <h3>CS Enthusiast</h3>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
-                    Learning Python, SQL, and Web basics. Dedicated to understanding the logic behind the screen.
+
+            <!-- Future -->
+            <div class="card">
+                <h4><i class="fas fa-road"></i> The Vision</h4>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--secondary);">
+                    <strong>10 Year Goal:</strong> To be in the position I have always dreamed of. It may seem small to others, but for me, it is a "charm."
                 </p>
-            </div>
-            <div class="trait-item">
-                <i class="fas fa-book-open trait-icon"></i>
-                <h3>Consistent Learner</h3>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
-                    I focus on daily progress. I might be an "average" student on paper, but my effort is above average.
+                <br>
+                <p style="font-size: 0.9rem; color: var(--secondary);">
+                    <strong>Challenge:</strong> Learning takes time, but I live by the rule: <em>"Nothing is impossible. Everything is possible."</em>
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Personality / Trivia (New Section) -->
+    <section id="vibes">
+        <h2 class="section-title">My Vibe & Interests</h2>
+        <div class="about-grid">
+            <div class="card">
+                <h3>Currently Obsessed With</h3>
+                <ul class="obsession-list">
+                    <li>
+                        <i class="fas fa-tv"></i> 
+                        <div>
+                            <strong>Anime: Solo Leveling</strong>
+                            <br><span style="font-size: 0.8rem;">Watching Jin-Woo level up inspires me to grind in real life.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-book-open"></i> 
+                        <div>
+                            <strong>Reading: Manga</strong>
+                            <br><span style="font-size: 0.8rem;">Immersing myself in stories and art.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-headphones"></i> 
+                        <div>
+                            <strong>Vibe: Dark Aesthetic</strong>
+                            <br><span style="font-size: 0.8rem;">Monochrome colors, night mode, and focus.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card" style="display: flex; align-items: center; justify-content: center;">
+                <div class="quote-container">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <p class="quote-text">
+                        "Don't use your energy to worry. Use your energy to trust, believe, then grow, glow and manifest, and heal."
+                    </p>
+                    <span class="quote-author">- Mantra to Live By</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
         <div class="contact-container card">
-            <h2>Let's Get in Touch</h2>
-            <p style="margin-top: 15px; color: #cbd5e1;">
-                Whether you go to PM SHRI KV No.1, or just want to discuss tech, I'd love to hear from you.
+            <h2>Let's Connect</h2>
+            <p style="margin: 15px 0; color: var(--secondary);">
+                Whether you go to KV No.1 or just want to chat about anime and code.
             </p>
             <div class="social-links">
-                <a href="#" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Om Prakash Bisoi. Made with <i class="fas fa-heart" style="color: var(--primary);"></i> in Bhubaneswar.</p>
+        <p>&copy; 2025 Om Prakash Bisoi. Made with <i class="fas fa-heart" style="color: #fff;"></i> in Bhubaneswar.</p>
     </footer>
 
 </body>
